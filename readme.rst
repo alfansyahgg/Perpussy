@@ -2,7 +2,7 @@
 Sistem Perpus
 ###################
 
-Dibuat dengan sepenuh kasih dengan Codeigniter 3, Vue JS, AJAX Jquery dan SB Admin 2 :)
+Dibuat dengan sepenuh kasih alfan dengan Codeigniter 3, Vue JS, AJAX Jquery, Chart JS dan SB Admin 2 :)
 
 *******************
 
@@ -10,9 +10,10 @@ Dibuat dengan sepenuh kasih dengan Codeigniter 3, Vue JS, AJAX Jquery dan SB Adm
 Current Features 19 Nov 2019
 ###################
 
--Multi Level Login
--Load More using AJAX
--Daftar Buku
--CRUD Buku
--Pinjam Buku
--Tabel Pinjam Buku
+-  `Multi Level Login`_
+-  `Load More using AJAX`_
+-  `CRUD Buku Administrator`_
+-  `Pinjam Buku`_
+-  `Tabel Pinjaman Buku`_
+-  `Denda Peminjaman Buku Overdue`_
+-  `Chart Peminjaman Buku`_
