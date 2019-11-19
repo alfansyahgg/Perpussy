@@ -10,10 +10,10 @@ Dibuat dengan sepenuh kasih alfan dengan Codeigniter 3, Vue JS, AJAX Jquery, Cha
 Current Features 19 Nov 2019
 ###################
 
--  `Multi Level Login`_
--  `Load More using AJAX`_
--  `CRUD Buku Administrator`_
--  `Pinjam Buku`_
--  `Tabel Pinjaman Buku`_
--  `Denda Peminjaman Buku Overdue`_
--  `Chart Peminjaman Buku`_
+-  Multi Level Login
+-  Load More using AJAX
+-  CRUD Buku Administrator
+-  Pinjam Buku
+-  Tabel Pinjaman Buku
+-  Denda Peminjaman Buku Overdue
+-  Chart Peminjaman Buku
