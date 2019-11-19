@@ -39,7 +39,7 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url('assets/sb-admin/'); ?>vendor/jquery/jquery.min.js"></script>
+  
   <script src="<?php echo base_url('assets/sb-admin/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -54,6 +54,27 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url('assets/sb-admin/'); ?>js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url('assets/sb-admin/'); ?>js/demo/chart-pie-demo.js"></script>
+
+  <script type="text/javascript" src="<?php echo base_url('assets/jquery/jquery.matchHeight.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/jquery/jquery-ui.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/js_buku.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/datepicker/bootstrap-datepicker.min.js'); ?>"></script>
+
+  <!-- Page level plugins -->
+  <script src="<?php echo base_url('assets/sb-admin/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url('assets/sb-admin/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="<?php echo base_url('assets/sb-admin/'); ?>js/demo/datatables-demo.js"></script>
+
+  <!-- Sweet Alert -->
+  <script type="text/javascript" src="<?php echo base_url('assets/sweet-alert/sweetalert2.all.min.js'); ?>"></script>
+  
+  
+
+  <!-- <script type="text/javascript" src="<?php echo base_url('assets/datatables/datatables.min.js'); ?>"></script> -->
+
 
 </body>
 

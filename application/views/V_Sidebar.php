@@ -1,4 +1,18 @@
-<body id="page-top">
+<style type="text/css">
+  .loader{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(<?php echo base_url('assets/images/spinner.gif'); ?>) 
+              50% 50% no-repeat rgba(0,0,0,1);
+  opacity: 0.5;
+  display: none;
+}
+</style>
+<body id="page-top" class="body-content">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -19,10 +33,23 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?php echo base_url(); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Daftar Buku</span></a>
       </li>
+
+      <hr class="sidebar-divider">
+
+      <div class="sidebar-heading">
+        Menu
+      </div>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('C_Index/admin'); ?>">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Pinjaman Saya</span></a>
+      </li>
+
   <?php if($this->session->status == 'admin'): ?>
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -30,7 +57,7 @@
       <!-- Heading -->
 
       <div class="sidebar-heading">
-        Interface
+        Menu Admin
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -44,78 +71,23 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>Administrasi Perpus</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="<?php echo base_url('assets/sb-admin/'); ?>buttons.html">Buttons</a>
-            <a class="collapse-item" href="<?php echo base_url('assets/sb-admin/'); ?>cards.html">Cards</a>
+            <a class="collapse-item" href="<?php echo base_url('C_Buku'); ?>">Tabel Buku</a>
+            <a class="collapse-item" href="">Tabel Pinjaman Buku</a>
           </div>
         </div>
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="<?php echo base_url('assets/sb-admin/'); ?>utilities-color.html">Colors</a>
-            <a class="collapse-item" href="<?php echo base_url('assets/sb-admin/'); ?>utilities-border.html">Borders</a>
-            <a class="collapse-item" href="<?php echo base_url('assets/sb-admin/'); ?>utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="<?php echo base_url('assets/sb-admin/'); ?>utilities-other.html">Other</a>
-          </div>
-        </div>
-      </li>
+      
+      
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="<?php echo base_url('assets/sb-admin/'); ?>login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('assets/sb-admin/'); ?>charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('assets/sb-admin/'); ?>tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
-      <?php endif; ?>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
+      <?php endif; ?>
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -123,13 +95,15 @@
       </div>
 
     </ul>
+    
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
+      <!-- Main Contenttttttttttttttttttttt -->
       <div id="content">
+      <div class="loader"></div>
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -237,7 +211,7 @@
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <img class="rounded-circle" src="" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
@@ -247,7 +221,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                    <img class="rounded-circle" src="" alt="">
                     <div class="status-indicator"></div>
                   </div>
                   <div>
@@ -257,7 +231,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                    <img class="rounded-circle" src="" alt="">
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
@@ -267,7 +241,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                    <img class="rounded-circle" src="" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>

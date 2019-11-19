@@ -36,7 +36,8 @@ class C_Index extends CI_Controller {
     		$session = array('username' => $username, 'logged_in' => true,'status' => 'admin');
     		$this->session->set_userdata($session);
     		$this->session->unset_userdata('gagal');
-    		redirect('C_Index');
+            redirect('C_Index');
+           
     	}elseif ($status == "user") {
             $session = array('username' => $username, 'logged_in' => true,'status' => 'user');
             $this->session->set_userdata($session);
@@ -47,12 +48,13 @@ class C_Index extends CI_Controller {
     		$session = array('logged_in' => false, 'gagal' => 1);
     		$this->session->set_userdata($session);
     		redirect('C_Index');
-    	}
+        }
+        
     }
 
     function logout(){
+        $this->session->sess_destroy();
     	$session = array('gagal' => 1);
-    	$this->session->sess_destroy();
     	$this->session->set_userdata($session);
     	redirect('C_Index');
     }
@@ -70,5 +72,33 @@ class C_Index extends CI_Controller {
             $this->load->view('V_Main',$data);
             $this->load->view('V_Footer',$data);
         }
+    }
+
+    function getDataMore(){
+        $id_last    = $this->input->get('id_last');
+        $data       = $this->M_buku->getDataMore($id_last);
+
+        $numOfCols = 3;
+        $rowCount = 0;
+        $bootstrapColWidth = 12 / $numOfCols;
+        $more = '';
+        foreach ($data as $key => $dt) {
+           $more .= '<div class="col-lg-'.$bootstrapColWidth.' col-content" data-id="'.$dt->id.'">';
+           $more .= '<div class="col-lg-12 mb-4">';
+           $more .= '<div class="card card-class">';
+           $more .= '<center>';
+           $more .= '<img style="height: 100%;width: 60%;" src='.base_url('assets/images/buku/').$dt->cover_buku.' class="card-img-top img-cover" alt='.$dt->judul_buku.'>';
+           $more .= '</center>';
+           $more .= '<div class="card-body">';
+           $more .= '<h5 class="card-title"><a href='.base_url('C_Buku/lihatBuku/').$dt->id.'>'.$dt->judul_buku.'</a></h5>';
+           $more .= '<p class="card-text">'.substr($dt->keterangan_buku,0,150).'...</p>';
+           $more .= '<a href='.base_url("C_Buku/lihatBuku/").$dt->id.' class="btn btn-primary">Lihat Buku</a>';
+           $more .= '</div>';
+           $more .= '</div>';
+           $more .= '</div>';
+           $more .= '</div>';
+        }
+ 
+        echo $more;
     }
 }

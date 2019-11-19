@@ -54,5 +54,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-$route['C_Index/(:any)'] 				= 'C_Index/$1';
-$route['C_Index/(:any)/(:any)'] 			= 'C_Index/$1/$2';
+$route['C_Index/(:any)'] 						= 'C_Index/$1';
+$route['C_Index/(:any)/(:any)'] 				= 'C_Index/$1/$2';
+
+$route['C_Buku/(:any)']							= 'C_Buku/$1';
+$route['C_Buku/(:any)/(:any)']					= 'C_Buku/$1/$2';
