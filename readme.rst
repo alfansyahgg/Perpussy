@@ -2,7 +2,7 @@
 Sistem Perpus V.0.1
 ###################
 
-Dibuat dengan sepenuh kasih dengan Codeigniter 3, Vue JS, AJAX Jquery, Chart JS dan SB Admin 2.
+Dibuat dengan sepenuh kasih dengan Codeigniter 3 + Vue JS
 
 *******************
 
