@@ -1,5 +1,5 @@
 $(document).ready(function(){
-        const base_url = 'http://localhost/alf_perpus/';
+        const base_url = 'http://localhost/Perpussy/';
 	    $("#tbl_buku").DataTable();
 
 		$("#tbl_buku").on('click','.btn-delete',function(event){
@@ -28,18 +28,18 @@ $(document).ready(function(){
                                     }
                                 })
                             },1000);
-                            
+
                         },
                         error: function(response){
                             setTimeout(function(){
                                 $('.loader').hide();
                                 Swal.fire('Gagal','Gagal Menghapus Data','error');
                             },1000);
-                           
+
                         }
 					})
 				}
 				})
-			
+
 		})
 })

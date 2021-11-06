@@ -4,12 +4,14 @@
 		<div class="card-header bg-gray-400 mb-4">
 			 <div>
              <h4 class="m-0 font-weight-bold text-primary" style="float: left;"><?= $detail->judul_buku ?></h4></span>
-             <button onclick="location.href = '<?php echo base_url(); ?>C_Buku/windowEditBuku/<?= $detail->id ?>' " style="float: right" class="btn btn-success">
-                    <span class="icon text-white-50">
-							<i class="fas fa-info-circle"></i>
-						</span>
-						<span class="text">Edit Buku</span>
-            </button>
+						 <?php if ($this->session->status == 'admin'): ?>
+	             <button onclick="location.href = '<?php echo base_url(); ?>C_Buku/windowEditBuku/<?= $detail->id ?>' " style="float: right" class="btn btn-success">
+	                    <span class="icon text-white-50">
+								<i class="fas fa-info-circle"></i>
+							</span>
+							<span class="text">Edit Buku</span>
+	            </button>
+						 <?php endif; ?>
 			 </div>
 		</div>
 		<div class="card-body">

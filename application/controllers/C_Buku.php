@@ -20,9 +20,9 @@ class C_Buku extends CI_Controller {
             $this->load->view('V_Login');
         }else{
             $this->load->view('V_Header',$data);
-			$this->load->view('V_Sidebar',$data);
-			$this->load->view('Buku/V_TabelBuku',$data);
-			$this->load->view('V_Footer',$data);
+						$this->load->view('V_Sidebar',$data);
+						$this->load->view('Buku/V_TabelBuku',$data);
+						$this->load->view('V_Footer',$data);
         }
     }
 
@@ -33,6 +33,9 @@ class C_Buku extends CI_Controller {
     }
 
     function windowTambahBuku(){
+			if ($this->session->status != 'admin') {
+				echo '<pre>';print_r('prohibited');exit();
+			}
         $data['nama']        = $this->session->username;
         $data['NoBuku']      = $this->M_buku->getLastNoBuku()[0];
         if($this->session->logged_in != TRUE){
@@ -46,6 +49,9 @@ class C_Buku extends CI_Controller {
     }
 
     function tambahBuku(){
+				if ($this->session->status != 'admin') {
+					echo '<pre>';print_r('prohibited');exit();
+				}
         $covername          = $_FILES['file']['name'];
         $config['upload_path'] = './assets/images/buku/'; //buat folder dengan nama assets di root folder
         $config['file_name'] = $covername;
@@ -86,26 +92,35 @@ class C_Buku extends CI_Controller {
     }
 
     function hapusBuku(){
+				if ($this->session->status != 'admin') {
+					echo '<pre>';print_r('prohibited');exit();
+				}
         $id = $this->input->post('id');
         $hapus = $this->M_buku->deleteBuku($id);
     }
 
     function windowEditBuku($id){
+				if ($this->session->status != 'admin') {
+					echo '<pre>';print_r('prohibited');exit();
+				}
         $data['detailBuku'] = $this->M_buku->getDataBukuById($id);
         // echo "<pre>";
         // print_r($data['detailBuku']);exit();
 
         if($this->session->logged_in != TRUE){
             $this->load->view('V_Login');
-        }else{
-            $this->load->view('V_Header',$data);
-			$this->load->view('V_Sidebar',$data);
-			$this->load->view('Buku/V_EditBuku',$data);
-			$this->load->view('V_Footer',$data);
-        }
+	        }else{
+	            $this->load->view('V_Header',$data);
+							$this->load->view('V_Sidebar',$data);
+							$this->load->view('Buku/V_EditBuku',$data);
+							$this->load->view('V_Footer',$data);
+	        }
     }
 
     function updateBuku($id){
+				if ($this->session->status != 'admin') {
+					echo '<pre>';print_r('prohibited');exit();
+				}
         $covername          = $_FILES['file']['name'];
         $data['detailBuku'] = $this->M_buku->getDataBukuById($id);
         if($covername == ""){
@@ -121,7 +136,7 @@ class C_Buku extends CI_Controller {
         $sinopsis_buku      = $this->input->post('sinopsis_buku');
         $pengarang          = $this->input->post('pengarang');
         $tanggal_rilis      = $this->input->post('tanggal_rilis');
-        
+
         $data = array(
             'no_buku'               => $no_buku,
             'judul_buku'            => $judul_buku,
@@ -142,7 +157,6 @@ class C_Buku extends CI_Controller {
 
     function lihatBuku($id){
         $data['detailBuku'] = $this->M_buku->getDataBukuById($id);
-
         if($this->session->logged_in != TRUE){
             $this->load->view('V_Login');
         }else{

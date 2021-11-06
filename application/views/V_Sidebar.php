@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url(<?php echo base_url('assets/images/spinner.gif'); ?>) 
+  background: url(<?php echo base_url('assets/images/spinner.gif'); ?>)
               50% 50% no-repeat rgba(0,0,0,1);
   opacity: 0.5;
   display: none;
@@ -61,14 +61,14 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-     
+
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('C_Index/admin'); ?>">
+        <a class="nav-link" href="<?php echo base_url('C_Buku'); ?>">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Admin Page</span></a>
+          <span>Tabel Buku</span></a>
       </li>
-    
-      <li class="nav-item">
+
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Administrasi Perpus</span>
@@ -79,10 +79,10 @@
             <a class="collapse-item" href="">Tabel Pinjaman Buku</a>
           </div>
         </div>
-      </li>
+      </li> -->
 
-      
-      
+
+
 
 
       <!-- Divider -->
@@ -95,7 +95,7 @@
       </div>
 
     </ul>
-    
+
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->

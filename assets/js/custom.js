@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	const base_url = 'http://localhost/alf_perpus/';
+	const base_url = 'http://localhost/Perpussy/';
 	$('.card-class').matchHeight();
 
 	$('.btn-load-more').on('click',function(){
