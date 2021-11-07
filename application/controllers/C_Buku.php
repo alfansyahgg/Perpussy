@@ -167,4 +167,37 @@ class C_Buku extends CI_Controller {
         }
     }
 
+    function pinjaman(){
+        if($this->session->logged_in != TRUE){
+            $this->load->view('V_Login');
+        }else{
+            if($this->session->status != 'admin'){
+                echo "prohibited";exit();
+            }
+
+            $data = [];
+            $this->load->view('V_Header',$data);
+            $this->load->view('V_Sidebar',$data);
+            $this->load->view('Buku/V_Pinjaman',$data);
+            $this->load->view('V_Footer',$data);
+        }
+    }
+
+    function pinjamanUser(){
+        if($this->session->logged_in != TRUE){
+            $this->load->view('V_Login');
+        }else{
+            if($this->session->status == 'admin'){
+                echo "prohibited";exit();
+            }
+            
+
+            $data = [];
+            $this->load->view('V_Header',$data);
+            $this->load->view('V_Sidebar',$data);
+            $this->load->view('Buku/V_PinjamanUser',$data);
+            $this->load->view('V_Footer',$data);
+        }
+    }
+
 }

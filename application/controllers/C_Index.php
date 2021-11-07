@@ -30,16 +30,16 @@ class C_Index extends CI_Controller {
     	$password 	= $this->input->post('password');
 
     	$status		= $this->M_index->loginDetail($username,md5($password));
-        // var_dump($status);exit();
+        // echo "<pre>";print_r($status);exit();
 
-    	if($status == "admin"){
-    		$session = array('username' => $username, 'logged_in' => true,'status' => 'admin');
+    	if($status['status'] == "admin"){
+    		$session = array('user_id' => $status['id'] ,'username' => $username, 'logged_in' => true,'status' => 'admin');
     		$this->session->set_userdata($session);
     		$this->session->unset_userdata('gagal');
             redirect('C_Index');
            
-    	}elseif ($status == "user") {
-            $session = array('username' => $username, 'logged_in' => true,'status' => 'user');
+    	}elseif ($status['status'] == "user") {
+            $session = array('user_id' => $status['id'] ,'username' => $username, 'logged_in' => true,'status' => 'user');
             $this->session->set_userdata($session);
             $this->session->unset_userdata('gagal');
             redirect('C_Index');

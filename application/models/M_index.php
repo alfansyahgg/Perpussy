@@ -10,15 +10,22 @@ class M_index extends CI_Model {
 		$result = $this->db->get('tb_user')->result_array();
 		// echo "<pre>";
 		// var_dump($result);exit();
+
+		$data = [];
+
 		if(!empty($result)){
 				if($result[0]['status'] == '1' ){
-				return "admin";
+				$data['status'] = 'admin';
+				$data['id']		= $result[0]['id'];
 			}elseif ($result[0]['status'] == '0') {
-				return "user";
+				$data['status'] = 'user';
+				$data['id']		= $result[0]['id'];
 			}
 		}else{
-			return 'gagal';
+			$data['status'] = 'gagal';
 		}
+
+		return $data;
 		
 	}
 }
